@@ -16,33 +16,6 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
   <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="txtx/JavaScript"></script> -->
   <script>
-
-
-    function millisToMinutesAndSeconds(millis) {
-      var minutes = Math.floor(millis / 60000);
-      var seconds = ((millis % 60000) / 1000).toFixed(0);
-      return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
-    }
-    var seconds = 0;
-    setInterval(function () {
-
-      var main = document.getElementById('main');
-
-      var mainDivs = main.getElementsByTagName('DIV');
-      for (var i = 0; i < mainDivs.length; i++) {
-        var timeRemaining = parseInt(mainDivs[i].getElementsByTagName("input")[0].value);
-
-        if (timeRemaining > 0) {
-          timeRemaining = timeRemaining - 1000;
-          mainDivs[i].getElementsByTagName("input")[0].value = timeRemaining.toString();;
-          mainDivs[i].getElementsByTagName("span")[0].textContent = millisToMinutesAndSeconds(timeRemaining);
-        }
-      }
-      seconds++;
-    }, 1000);
-
-
-
     // var startTime, endTime;
 
     // function start() {

@@ -1,45 +1,47 @@
 import React, { Component } from 'react';
 import logo from './assets/logo.png'
+import phone from './assets/phone.png'
+import user from './assets/user.png'
+import caret from './assets/caret.png'
 
 class Header extends Component {
 
     render() {
         return <div>
-            <header id="navigation" class="p-navigation" style={{ 'background-color': '#ffffff', 'font-family': '‘Open Sans’' }}>
-                <div class="p-navigation__banner">
-                    <div class="p-navigation__logo">
-                        <a class="p-navigation__link" href="#">
-                            <img class="p-navigation__image" src={logo} alt="" width="95"></img>
+            <header id="navigation" className="p-navigation" style={{ backgroundColor: '#ffffff', fontFamily: '‘Open Sans’' }}>
+                <div className="p-navigation__banner">
+                    <div className="p-navigation__logo">
+                        <a className="p-navigation__link" href="#">
+                            <img className="p-navigation__image" src={logo} style={{ height: '100%', width: '70%' }}></img>
                         </a>
                     </div>
-                    <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
-                    <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+                    <a href="#navigation" className="p-navigation__toggle--open" title="menu">Menu</a>
+                    <a href="#navigation-closed" className="p-navigation__toggle--close" title="close menu">Close menu</a>
                 </div>
-                <nav class="p-navigation__nav" role="menubar">
-                    <form class="p-search-box" action="/search">
-                        <input type="search" class="p-search-box__input" name="q" placeholder="Search" required="" />
-                        <button type="reset" class="p-search-box__reset" alt="reset"><i class="p-icon--close"></i></button>
-                        <button type="submit" class="p-search-box__button" alt="search"><i class="p-icon--search"></i></button>
+                <nav className="p-navigation__nav" role="menubar" style={{ height: '60px' }}>
+                    <table>
+                        <tbody>
+                            <tr style={{ borderTop: 'none' }}>
+                                <td style={{ width: '2%' }}></td>
+                                <td rowSpan="2" style={{ width: '30%', borderLeft: '2px solid #e4e4e4' }}><img src={phone}></img> <span style={{ position: 'absolute', padding: '1%' }}>(11)3569-3465</span></td>
+                                <td style={{ width: '80%' }}></td>
+                                <td style={{ width: '10%', padding: '0', margin: '0' }}>
+                                    <img src={user}></img>
+                                    <br>
+                                    </br>
+                                    <span>User Test</span>
+                                </td>
 
-                    </form>
-                    <span class="u-off-screen">
-                        <a href="#main-content">Jump to main content</a>
-                    </span>
-                    <ul class="p-navigation__links" role="menu">
-                        <li class="p-navigation__link is-selected" role="menuitem">
-                            <a href="#">Link1</a>
-                        </li>
-                        <li class="p-navigation__link" role="menuitem">
-                            <a href="#">Link2</a>
-                        </li>
-                        <li class="p-navigation__link" role="menuitem">
-                            <a href="#">Link3</a>
-                        </li>
-                    </ul>
+                                <td style={{ width: '10%' }}>
+                                    <img src={caret} style={{ top: '4px', position: 'absolute' }}></img>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </nav>
-            </header></div>
+            </header>
+        </div >
     }
-
 }
 
 export default Header;

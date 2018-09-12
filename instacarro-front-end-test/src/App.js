@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Label } from 'vanilla-framework-react';
-import logo from './assets/logo.png'
-
+import Car from './Car';
 
 class App extends Component {
   constructor(props) {
@@ -9,11 +7,10 @@ class App extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+      timeRemaining: ''
     };
   }
-
-
 
   componentDidMount() {
     fetch("https://s3-sa-east-1.amazonaws.com/config.instacarro.com/recruitment/auctions.json")
@@ -45,28 +42,14 @@ class App extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-
       return (
-
         <div>
-
           <div id="main">
             {
-
               items.slice(0).sort(function (a, b) {
                 return a.remainingTime - b.remainingTime;
               }).map(item => (
-                <div>
-                  <Button brand value="Fazer Oferta" />
-
-                  <img src={item.imageUrl}></img>
-                  <input id="timeElapsed" type="hidden" value={item.remainingTime}></input>
-                  <span>{item.remainingTime}</span>
-                  {/* <span id="timeElapsed">{item.remainingTime}</span> */}
-                  {/* <br></br> */}
-                  {/* <span>{this.millisToMinutesAndSeconds(item.remainingTime)}</span> */}
-
-                </div>
+                <Car item={item} />
               ))
             }
           </div>

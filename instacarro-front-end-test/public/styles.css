@@ -7,16 +7,26 @@
   -webkit-flex-wrap: wrap;
   /* Safari 6.1+ */
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center; }
 
-#main div {
-  width: 350px;
-  height: 250px;
+.car {
+  width: 300px;
+  height: 405px;
   margin: 10px; }
 
-#main div img {
+.car img {
   width: 100%;
   height: 100%; }
+
+table {
+  border-collapse: collapse; }
+
+table td {
+  text-align: center; }
 
 .p-icon--minus, .p-icon--plus, .p-icon--expand, .p-icon--collapse, .p-icon--chevron, .p-icon--close, .p-icon--help, .p-icon--information, .p-icon--delete, .p-icon--error, .p-icon--warning, .p-icon--external-link, .p-icon--contextual-menu, .p-icon--code, .p-icon--menu, .p-icon--copy, .p-icon--search, .p-icon--success, .p-icon--share, .p-icon--user, .p-icon--question, .p-icon--spinner {
   height: 1rem;
